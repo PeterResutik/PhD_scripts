@@ -11,6 +11,7 @@ python script.py input_fasta_file output_fasta_file name variants_str
 * the output file is the desired name of the output file,
 * the name is the name included in the first line of the outpu FASTA file
 * variants_str is a string of variants that conform to forensic nomenclature (ref): e.g. "A73G A523- -315.1C" indicating a subsitution, a deletion, and an insertion.
+* note: the N base on position 3107 is deleted from the final FASTA file.
 
 ## Authors
 
