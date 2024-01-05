@@ -2,12 +2,6 @@
 
 The goal of this project is to convert variants in a mitochondrial DNA (mtDNA) into a FASTA file. 
 
-
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
 ### Executing program
 
 ```
