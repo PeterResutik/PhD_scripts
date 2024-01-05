@@ -1,4 +1,4 @@
-# Project Title
+# From variants to FASTA file
 
 The goal of this project is to convert variants in a mitochondrial DNA (mtDNA) into a FASTA file. 
 
