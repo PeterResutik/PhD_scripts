@@ -13,7 +13,7 @@ The goal of this project is to convert variants in a mitochondrial DNA (mtDNA) i
 ```
 python script.py input_fasta_file output_fasta_file name variants_str
 ```
-* where input_fasta is the NC_012920.1.fasta file with the revised Cambridge Reference Sequence (rCRS) of the Human Mitochondrial DNA,
+* where input_fasta is the NC_012920.1.fasta file with the revised Cambridge Reference Sequence (rCRS) of the mtDNA,
 * the output file is the desired name of the output file,
 * the name is the name included in the first line of the outpu FASTA file
 * variants_str is a string of variants that conform to forensic nomenclature (ref): e.g. "A73G A523- -315.1C" indicating a subsitution, a deletion, and an insertion.
