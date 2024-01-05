@@ -37,14 +37,18 @@ def apply_variants(dna_sequence, variants):
 def read_dna_sequence_from_file(file_path):
     with open(file_path, 'r') as file:
         lines = file.readlines()
-        description = lines[0].strip()  # Get the description/header line
-        dna_sequence = ''.join(lines[1:]).replace("\n", "")  # Concatenate the remaining lines as the sequence
-    return description, dna_sequence
+        dna_sequence = ''.join(lines[:]).replace("\n", "")  # Concatenate the remaining lines as the sequence
+    return dna_sequence
 
 def custom_sort_indels(variant):
     numeric_part = float(''.join(c for c in variant if c.isdigit() or c == '.'))  # Convert to float to handle dots
     is_deletion = variant.startswith('-')
     return (numeric_part, is_deletion)
+
+def write_to_fasta_file(output_file, sequence, description="Modified Sequence"):
+    with open(output_file, 'w') as file:
+        file.write(f">{description}\n")
+        file.write(sequence)
 
 if __name__ == "__main__":
     if len(sys.argv) != 5:
@@ -76,11 +80,10 @@ if __name__ == "__main__":
 
     sorted_variants = substitutions + indels
 
-    description, dna_sequence = read_dna_sequence_from_file(input_fasta_file)
+    dna_sequence = read_dna_sequence_from_file(input_fasta_file)
 
     mutated_sequence = apply_variants(dna_sequence, sorted_variants)
     mutated_sequence2 = mutated_sequence.replace("N", "")
 
-    with open(output_fasta_file, 'w') as output_file:
-        output_file.write(description + "\n")
-        output_file.write(mutated_sequence2)
+    write_to_fasta_file(output_fasta_file, mutated_sequence2, name)
+
